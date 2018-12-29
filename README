@@ -1,4 +1,4 @@
-This is an Verilog 2001 RTL design that implementes a (1) SPI Slave and (2) Flipflop register memory map. 
+This is a Verilog 2001 RTL design that implementes a (1) SPI Slave and (2) Flipflop register memory map. 
 Why is it in Verilog 2001? Because Xilinx Vivado (free version) only supports VHDL and Verilog 2001.
 I have tested this design in a CMOD_A7 device connected to a Raspberry Pi 3.
 The SPI Slave is important as it allows high-speed communication between the FPGA and the Raspberry Pi.
