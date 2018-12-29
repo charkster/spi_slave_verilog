@@ -4,3 +4,11 @@ I have tested this design in a CMOD_A7 device connected to a Raspberry Pi 3.
 The SPI Slave is important as it allows high-speed communication between the FPGA and the Raspberry Pi.
 My first project is to drive JTAG scan patterns to an ASIC at the same speed the ATE tester does.
 After that I want to be able to record multiple signals and save the pattern to a file on the Raspberry Pi.
+
+Files:
+(1) spi_slave_lbus.v
+-> This file implementents a SPI slave and has a parallel "Local Bus" interface.
+(2) lbus_regmap.v
+-> This file implements a "Local Bus" register memory map. 2048 x 8 flipflops that are writeable and readable in byte width.
+(3) spi_regmap_top.v
+-> This file is the top-level that contains the spi_slave_lbus and lbus_regmap instances.
