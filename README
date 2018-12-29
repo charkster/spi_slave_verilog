@@ -12,3 +12,5 @@ Files:
 -> This file implements a "Local Bus" register memory map. 2048 x 8 flipflops that are writeable and readable in byte width.
 (3) spi_regmap_top.v
 -> This file is the top-level that contains the spi_slave_lbus and lbus_regmap instances.
+(4) spi_slave_memory.py
+-> This file reads and writes byte data to the FPGA from the Raspberry Pi
