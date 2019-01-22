@@ -37,7 +37,7 @@ module spi_slave_lbus
 
    // read command is 8'b0000_0010, write command is 8'b0000_0001
 
-   always @(negedge sclk or posedge reset_spi)
+  always @(posedge sclk or posedge reset_spi)
      if (reset_spi)                                                            read_cycle <= 1'b0;
      else if ((bit_count == 6'd7) && (mosi_buffer == 7'h01) && (mosi == 1'b0)) read_cycle <= 1'b1;
 
@@ -46,7 +46,7 @@ module spi_slave_lbus
       else if ((read_cycle == 1'b1) && (bit_count >= 6'd23)) rd_en <= 1'b1;
       else                                                   rd_en <= 1'b0;
 
-   always @(negedge sclk or posedge reset_spi)
+  always @(posedge sclk or posedge reset_spi)
      if (reset_spi)                                                            write_cycle <= 1'b0;
      else if ((bit_count == 6'd7) && (mosi_buffer == 7'h00) && (mosi == 1'b1)) write_cycle <= 1'b1;
 
